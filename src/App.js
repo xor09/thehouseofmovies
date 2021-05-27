@@ -26,15 +26,16 @@ function App() {
     
       {/* ---------------------------- */}
         
-          <Switch>
-              <Route path='/' component={Home}/>
-              <Route path='/thehouseofmovies' component={Home}/> 
+        <Switch>
+              
+              <Route exact path='/' component={Home}/>
               <Route path='/movie' component={Movies}/>
               <Route path='/tv' component={TvShows}/>
               <Route path='/info/movie/:id/:title' component={(props) => <Information key={window.location.pathname}/>}/>
               <Route path='/info/tv/:id/:name' component={(props) => <InformationTV key={window.location.pathname}/>}/>
               <Route component={Error}/>
-          </Switch>
+              
+        </Switch>
         
         
       {/* ------------- Footer ------------- */}

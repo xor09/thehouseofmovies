@@ -4,14 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter} from 'react-router-dom';
-import {Progress} from 'react-circle-progress-bar';
+import {HashRouter} from 'react-router-dom';
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter><App /></BrowserRouter>
+    <HashRouter><App /></HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
