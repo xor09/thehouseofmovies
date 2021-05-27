@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import "./style.css";
+import { Footer } from "./Footer.js";
+import { Header } from "./Header.js";
+import {Home} from './Home.js';
+import {Movies} from './Movies.js';
+import {TvShows} from './TvShows.js';
+import {Error} from './Error.js';
+import { Information} from './Information';
+import { InformationTV} from './InformationTV';
+
+import {Route, Switch} from 'react-router-dom';
+
+const API_KEY = "api_key=96421fbbc5840b04b22117d3eed01980";
+const BASE_URL = "https://api.themoviedb.org/3";
+const IMAGE_API = "https://image.tmdb.org/t/p/w500";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* ----------- header------------------- */}
+     
+        <Header />
+    
+      {/* ---------------------------- */}
+        
+          <Switch>
+              <Route path='/' exact component={Home}/>
+              <Route path='/movie' component={Movies}/>
+              <Route path='/tv' component={TvShows}/>
+              <Route path='/info/movie/:id/:title' component={(props) => <Information key={window.location.pathname}/>}/>
+              <Route path='/info/tv/:id/:name' component={(props) => <InformationTV key={window.location.pathname}/>}/>
+              <Route component={Error}/>
+          </Switch>
+        
+        
+      {/* ------------- Footer ------------- */}
+
+          <Footer />
+  
+      {/* ---------------------------------- */}
+    </>
   );
 }
 
