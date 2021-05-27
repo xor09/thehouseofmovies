@@ -28,7 +28,7 @@ function App() {
         
           <Switch>
               <Route path='/' exact component={Home}/>
-              <Route path='/thehouseofmovies' exect component={Home}/> 
+              <Route path='/thehouseofmovies' component={Home}/> 
               <Route path='/movie' component={Movies}/>
               <Route path='/tv' component={TvShows}/>
               <Route path='/info/movie/:id/:title' component={(props) => <Information key={window.location.pathname}/>}/>
