@@ -31,8 +31,8 @@ function App() {
               <Route exact path='/' component={Home}/>
               <Route path='/movie' component={Movies}/>
               <Route path='/tv' component={TvShows}/>
-              <Route path='/info/movie/:id/:title' component={(props) => <Information key={window.location.pathname}/>}/>
-              <Route path='/info/tv/:id/:name' component={(props) => <InformationTV key={window.location.pathname}/>}/>
+              <Route path='/info/movie/:id/:title' component={(props) => <Information key={window.location.href}/>}/>
+              <Route path='/info/tv/:id/:name' component={(props) => <InformationTV key={window.location.href}/>}/>
               <Route component={Error}/>
               
         </Switch>
