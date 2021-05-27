@@ -433,15 +433,15 @@ body {
   border-radius: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .badge-left {
-  width: 50%;
+  /* width: 50%; */
 }
 
 .info-right {
-  width: 50%;
+  /* width: 50%; */
 }
 
 /* --------------------- info page -------------------------*/
