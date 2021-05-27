@@ -27,7 +27,7 @@ function App() {
       {/* ---------------------------- */}
         
           <Switch>
-              <Route path='/' exact component={Home}/>
+              <Route path='/' component={Home}/>
               <Route path='/thehouseofmovies' component={Home}/> 
               <Route path='/movie' component={Movies}/>
               <Route path='/tv' component={TvShows}/>
