@@ -3,7 +3,7 @@ import "./style.css";
 import axios from "axios";
 import { MovieData } from "./Cards.js";
 import {TvData} from './TvCard.js';
-import {Link, useParams} from 'react-router-dom';
+import {Link, useParams, Redirect} from 'react-router-dom';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import { Button, Badge, Modal, Carousel  } from "react-bootstrap";
 import ReactPlayer from "react-player";
@@ -34,6 +34,7 @@ export function Information(){
     const [Crew, setCrew] = useState([]);
     const [Rec, setRec] = useState([]);
     const [Genres, setGenres] = useState([]);
+    const [WatchProvider, setWatchProvider] = useState([]);
 
     
 
@@ -72,7 +73,22 @@ export function Information(){
             setRec(data.results);
       }, []);
 
+      useEffect(async () => {
+        const { data } = await axios.get(
+          BASE_URL +
+            "/movie/"+id+"/watch/providers?api_key=96421fbbc5840b04b22117d3eed01980"
+        );
+            if(data.results.IN){
+                if(data.results.IN.free)  setWatchProvider(data.results.IN.free);
+                else if(data.results.IN.buy) setWatchProvider(data.results.IN.buy);
+                else if(data.results.IN.rent) setWatchProvider(data.results.IN.rent);
+                else if(data.results.IN.flatrate) setWatchProvider(data.results.IN.flatrate);
+            }
+            
+            
+      }, []);
 
+    //   console.log(WatchProvider);
 
       /*  -------------------------------  */
             const [show, setShow] = useState(false);
@@ -186,12 +202,25 @@ export function Information(){
                             
                             <br></br>
                             <h4>Overview</h4><p style={{fontFamily: 'sans-serif',fontWeight: 'lighter'}}>{Overview}</p>
+                            <div class='streamer'>
+                                <h7 style={{color: 'white'}}>Streaming on </h7>
+                                <div class='streamerName'>{
+                            
+                                                            WatchProvider.length>0 && WatchProvider.map(loc=>{
+                                                                return <img src={IMAGE_API+loc.logo_path}></img>
+                                                            })
+                                                        }
+                                                        
+                                                      
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     
                 </div>
-                        <div class='midle-info'>
-                </div>
+                {/* <div class='streamer'><span>Streaming on </span>&nbsp;<img src={"https://image.tmdb.org/t/p/w500"+WatchProvider.logo_path}></img></div> */}
+                
                 
             </div>
             <div class='cast-title'><b>Top Billed Cast</b></div>

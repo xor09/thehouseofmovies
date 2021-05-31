@@ -33,6 +33,7 @@ export function InformationTV(){
     const [Crew, setCrew] = useState([]);
     const [Rec, setRec] = useState([]);
     const [Genres, setGenres] = useState([]);
+    const [WatchProvider, setWatchProvider] = useState([]);
 
     
 
@@ -68,6 +69,21 @@ export function InformationTV(){
             "/tv/"+id+"/recommendations?api_key=96421fbbc5840b04b22117d3eed01980&language=en-US"
         );
             setRec(data.results);
+      }, []);
+
+      useEffect(async () => {
+        const { data } = await axios.get(
+          BASE_URL +
+            "/tv/"+id+"/watch/providers?api_key=96421fbbc5840b04b22117d3eed01980"
+        );
+            if(data.results.IN){
+                if(data.results.IN.free)  setWatchProvider(data.results.IN.free);
+                else if(data.results.IN.buy) setWatchProvider(data.results.IN.buy);
+                else if(data.results.IN.rent) setWatchProvider(data.results.IN.rent);
+                else if(data.results.IN.flatrate) setWatchProvider(data.results.IN.flatrate);
+            }
+            
+            
       }, []);
       
       /*  -----------------------------------------------   */
@@ -182,12 +198,21 @@ export function InformationTV(){
                             
                             <br></br>
                             <h4>Overview</h4><p style={{fontFamily: 'sans-serif',fontWeight: 'lighter'}}>{Overview}</p>
+                            <div class='streamer'>
+                                <h7 style={{color: 'white'}}>Streaming on </h7>
+                                <div class='streamerName'>{
+                                                            WatchProvider.length>0 && WatchProvider.map(loc=>{
+                                                                return <img src={IMAGE_API+loc.logo_path}></img>
+                                                            })
+                                                        }
+                                                        
+                                                      
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
-                        <div class='midle-info'>
-                </div>
+                       
                 
             </div>
             <div class='cast-title'><b>Top Billed Cast</b></div>
