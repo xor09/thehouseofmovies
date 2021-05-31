@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/thehouseofmovies/static/css/main.549ecc92.chunk.css",
-    "main.js": "/thehouseofmovies/static/js/main.e7d1184d.chunk.js",
-    "main.js.map": "/thehouseofmovies/static/js/main.e7d1184d.chunk.js.map",
+    "main.css": "/thehouseofmovies/static/css/main.05e0f9bb.chunk.css",
+    "main.js": "/thehouseofmovies/static/js/main.87147c48.chunk.js",
+    "main.js.map": "/thehouseofmovies/static/js/main.87147c48.chunk.js.map",
     "runtime-main.js": "/thehouseofmovies/static/js/runtime-main.bf07b3e4.js",
     "runtime-main.js.map": "/thehouseofmovies/static/js/runtime-main.bf07b3e4.js.map",
     "static/css/2.3d116079.chunk.css": "/thehouseofmovies/static/css/2.3d116079.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.b7299b92.chunk.js.map": "/thehouseofmovies/static/js/3.b7299b92.chunk.js.map",
     "index.html": "/thehouseofmovies/index.html",
     "static/css/2.3d116079.chunk.css.map": "/thehouseofmovies/static/css/2.3d116079.chunk.css.map",
-    "static/css/main.549ecc92.chunk.css.map": "/thehouseofmovies/static/css/main.549ecc92.chunk.css.map",
+    "static/css/main.05e0f9bb.chunk.css.map": "/thehouseofmovies/static/css/main.05e0f9bb.chunk.css.map",
     "static/js/2.09712ed1.chunk.js.LICENSE.txt": "/thehouseofmovies/static/js/2.09712ed1.chunk.js.LICENSE.txt",
     "static/media/404-page-not-found.960be576.jpg": "/thehouseofmovies/static/media/404-page-not-found.960be576.jpg",
     "static/media/default-monochrome-white.e479c286.svg": "/thehouseofmovies/static/media/default-monochrome-white.e479c286.svg",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.bf07b3e4.js",
     "static/css/2.3d116079.chunk.css",
     "static/js/2.09712ed1.chunk.js",
-    "static/css/main.549ecc92.chunk.css",
-    "static/js/main.e7d1184d.chunk.js"
+    "static/css/main.05e0f9bb.chunk.css",
+    "static/js/main.87147c48.chunk.js"
   ]
 }
