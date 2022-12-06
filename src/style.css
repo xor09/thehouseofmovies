@@ -286,8 +286,9 @@ body {
 }
 
 .overlay::-webkit-scrollbar {
-  display: 0; /*Chrome */
+  display: none; /*Chrome */
 }
+
 
 .overlay {
   -ms-overflow-style: none; /*IE and Edge */
